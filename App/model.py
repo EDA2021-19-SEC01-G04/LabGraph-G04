@@ -31,6 +31,7 @@ from DISClib.Algorithms.Graphs import scc
 from DISClib.Algorithms.Graphs import dijsktra as djk
 from DISClib.Utils import error as error
 assert config
+import time
 
 """
 En este archivo definimos los TADs que vamos a usar y las operaciones
@@ -178,6 +179,7 @@ def minimumCostPaths(analyzer, initialStation):
     Calcula los caminos de costo mínimo desde la estacion initialStation
     a todos los demas vertices del grafo
     """
+
     analyzer['paths'] = djk.Dijkstra(analyzer['connections'], initialStation)
     return analyzer
 
@@ -285,3 +287,4 @@ def compareroutes(route1, route2):
         return 1
     else:
         return -1
+
